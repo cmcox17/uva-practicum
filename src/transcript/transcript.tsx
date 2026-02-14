@@ -1,3 +1,4 @@
+import './transcript.css';
 
 function Transcript() {
     return (
@@ -55,4 +56,4 @@ function Transcript() {
     );
 }
 
-export default Transcript
+export default Transcript;

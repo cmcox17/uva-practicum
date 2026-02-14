@@ -1,0 +1,35 @@
+#root {
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url('src/assets/FE24ByTheNumbers/Header_SF_FEBytheNumbers_DA_JD.jpg');
+  
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.header-text {
+     div {
+        color: #232d4b;
+        font-weight: 200;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 169px;
+        text-align: left;
+        padding-left: 20%;
+        text-decoration-line: underline;
+        text-decoration-color: #e57200;
+    }
+}
