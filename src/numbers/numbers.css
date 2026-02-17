@@ -2,6 +2,10 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    /* set text color for entire document - can be overriden */
+    color: #232d4b;
 }
 
 /* Utility Classes */
@@ -31,8 +35,13 @@
 .header {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 100%;
+
+    .connecting-line-container {
+        margin: 0;
+    }
 }
 
 .header-image {
@@ -50,7 +59,6 @@
 
 .title {
     line-height: 30rem;
-    color: #232d4b;
 
     .title-text {
         position: relative;
@@ -116,14 +124,32 @@
 }
 
 .connecting-line {
-    border-left: 12px solid #e57200;
-    height: 500px;
-    margin-left: 50%;
+    fill: none;
+    stroke: #e57200;
+    stroke-width: 18px;
 }
 
-.degree-section .connecting-line {
+.connecting-line-container {
     margin-top: 8vh;
     margin-bottom: 8vh;
+}
+
+.degree-section {
+    [class*=-number] {
+        font-size: 28vw;
+        line-height: .8em;
+    }
+
+    [class*=-text] {
+        font-size: 4vw;
+        line-height: 1em;
+    }
+
+    .graduate-degrees-number {
+        /* override text color and font size */
+        color: #e57200;
+        font-size: 10vw;
+}
 }
 
 .degree-image {
@@ -132,7 +158,6 @@
 
 .degree-number {
     flex: 0;
-    font-size: 27vw;
     line-height: .7em;
 }
 
@@ -158,11 +183,7 @@
     flex: 1;
 }
 
-.graduate-degrees-number {
-    color: #e57200;
-    font-size: 10vw;
-    line-height: .5em;
-}
+
 
 .graduate-degrees-text {
     font-size: 3.5vw;
@@ -173,6 +194,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 5vw;
 }
 
 .stopwatch-image {
@@ -185,14 +207,35 @@
 }
 
 .fast-degrees-number {
-    font-size: 33vw;
+    font-size: 28vw;
     line-height: .7em;
 }
 
 .fast-degrees-text {
     max-width: 100%;
-    font-size: 4vw;
     text-wrap: wrap;
     text-align: left;
-    line-height: 1em;
+}
+
+.age-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.first-gen-number {
+    font-size: 28vw;
+    line-height: .8em;
+}
+
+.youngest-age-text {
+    text-wrap: wrap;
+    max-width: 50vw;
+}
+
+.snake {
+    fill: none;
+    stroke: #e57200;
+    stroke-width: 18px;
 }

@@ -7,11 +7,13 @@ import statOneImage from '../assets/stat_1.png';
 import phdImage from '../assets/phd.png';
 import jdImage from '../assets/jd.png';
 import mdImage from '../assets/md.png';
-// import statSixImage from '../assets/stat_6.png';
- import stopwatchImage from '../assets/stopwatch.png';
+import statSixImage from '../assets/stat_6.png';
+import stopwatchImage from '../assets/stopwatch.png';
 // import footerImage from '../assets/footer.png';
 
 function Numbers() {
+    const connectorPath='M500 0 V 620';
+    const snakePath='M680 0 V 110 H 1350 V 220 H 10 V 330 H 1350 V 440 H 10 V550 H 680 V 660';
     return (
         <>
             <div className='header'>
@@ -26,8 +28,10 @@ function Numbers() {
                         <span className='numbers-text franklin-gothic-book'>BY THE NUMBERS</span>
                     </div>
                 </div>
+            <svg className='connecting-line-container'height='620' width='1000'>
+                <path className='connecting-line' d={connectorPath}></path>
+            </svg>
             </div>
-            <div className='connecting-line'></div>
             <div className='degree-image'>
                 <img src={statOneImage}></img>
             </div><div className='degree-section'>
@@ -36,12 +40,16 @@ function Numbers() {
                 <hr className='degree-break'></hr>
                 <div className='degree-number franklin-gothic-demi'>4394</div>
                 <div className='degree-text franklin-gothic-medium'>Total Number of Baccalaureate Degrees</div>
-                <div className='connecting-line'></div>
+                <svg className='connecting-line-container'height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
                 <div className='degree-chart'>
                     {/* TODO: Implement MUI X Pie Chart with Degree Data */}
                     Placeholder!
                 </div>
-                <div className='connecting-line'></div>
+                <svg className='connecting-line-container' height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
                 <div className='degree-text franklin-gothic-medium'>Graduate and Professional Degrees</div>
                 <div className='graduate-degrees-section'>
                     {/* TODO: Align these properly */}
@@ -61,13 +69,15 @@ function Numbers() {
                     </div>
                     <div className='graduate-degrees-subsection'>
                         <div className='graduate-degrees-image'>
-                            <img style={{width: '335px', height: '382px'}} src={mdImage}></img>
+                            <img src={mdImage}></img>
                         <div className='graduate-degrees-number franklin-gothic-demi'>436</div>
                         <div className='graduate-degrees-text franklin-gothic-medium'>MDs</div>
                         </div>
                     </div>
                 </div>
-                <div className='connecting-line'></div>
+                <svg className='connecting-line-container'height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
                 <div className='fast-degrees-section'>
                     <div className='stopwatch-image'>
                         <img src={stopwatchImage}></img>
@@ -76,6 +86,27 @@ function Numbers() {
                         <div className='fast-degrees-number franklin-gothic-demi'>10</div>
                         <div className='fast-degrees-text franklin-gothic-medium'>Degrees Earned in Two Years</div>
                     </div>
+                </div>
+                <svg className='connecting-line-container'height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
+                <div className='first-gen-section'>
+                    <div className='first-gen-image'>
+                        <img src={statSixImage}></img>
+                    </div>
+                    <div className='first-gen-number franklin-gothic-demi'>1092</div>
+                    <div className='first-gen-text franklin-gothic-medium'>First Generation College Graduates</div>
+                </div>
+                <svg className='connecting-line-container'height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
+                <div className='age-section'>
+                    <div className='youngest-age-number'>19</div>
+                    <div className='youngest-age-text'>Age of Youngest Graduates (There are Six!)</div>
+                    <svg className='connecting-line-container'height='660' width='1360'>
+                        <path className='snake' d={snakePath} ></path>
+                    </svg>
+                    <div className='oldest-age-number'></div>
                 </div>
             </div>
         </>
