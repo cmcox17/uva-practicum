@@ -2,18 +2,22 @@
 import './numbers.css';
 
 // image imports
+import balloonsImage from '../assets/balloons.png';
 import headerImage from '../assets/header.jpg';
-import statOneImage from '../assets/stat_1.png';
-import phdImage from '../assets/phd.png';
-import jdImage from '../assets/jd.png';
 import mdImage from '../assets/md.png';
+import jdImage from '../assets/jd.png';
+import phdImage from '../assets/phd.png';
+import statOneImage from '../assets/stat_1.png';
 import statSixImage from '../assets/stat_6.png';
 import stopwatchImage from '../assets/stopwatch.png';
-// import footerImage from '../assets/footer.png';
+import sustainableImage from '../assets/sustainable.png';
+import waterTowersImage from '../assets/water_towers.png';
+import { UndergradPieChart } from './UndergradPieChart';
 
 function Numbers() {
-    const connectorPath='M500 0 V 620';
-    const snakePath='M680 0 V 110 H 1350 V 220 H 10 V 330 H 1350 V 440 H 10 V550 H 680 V 660';
+    // constants
+    const connectorPath = 'M500 0 V 620';
+    const snakePath = 'M680 0 V 110 H 1350 V 220 H 10 V 330 H 1350 V 440 H 10 V550 H 680 V 660';
     return (
         <>
             <div className='header'>
@@ -34,7 +38,8 @@ function Numbers() {
             </div>
             <div className='degree-image'>
                 <img src={statOneImage}></img>
-            </div><div className='degree-section'>
+            </div>
+            <div className='degree-section'>
                 <div className='degree-number franklin-gothic-demi'>7616</div>
                 <div className='degree-text franklin-gothic-medium'>Total Number of Degrees Awarded</div>
                 <hr className='degree-break'></hr>
@@ -44,8 +49,7 @@ function Numbers() {
                     <path className='connecting-line' d={connectorPath}></path>
                 </svg>
                 <div className='degree-chart'>
-                    {/* TODO: Implement MUI X Pie Chart with Degree Data */}
-                    Placeholder!
+                    <UndergradPieChart />
                 </div>
                 <svg className='connecting-line-container' height='620' width='1000'>
                     <path className='connecting-line' d={connectorPath}></path>
@@ -103,11 +107,46 @@ function Numbers() {
                 <div className='age-section'>
                     <div className='youngest-age-number'>19</div>
                     <div className='youngest-age-text'>Age of Youngest Graduates (There are Six!)</div>
-                    <svg className='connecting-line-container'height='660' width='1360'>
+                    <svg height='660' width='1360'>
                         <path className='snake' d={snakePath} ></path>
                     </svg>
-                    <div className='oldest-age-number'></div>
+                    <div className='oldest-age-number'>71</div>
+                    <div className='oldest-age-text'>Age of Oldest Graduate</div>
                 </div>
+                <svg className='connecting-line-container'height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
+            </div>
+            {/*TODO: build text into doc and style, rather than using screenshots */}
+            <div className='sustainable-image'>
+                <img src={sustainableImage}></img>
+            </div>
+            <div className='water-bottle-number franklin-gothic-demi'>6000</div>
+            <div className='water-bottle-text franklin-gothic-medium'>16oz Water Bottles Saved</div>
+            <div className='towers-image'>
+                <img src={waterTowersImage}></img>
+            </div>
+            <div className='balloons-number franklin-gothic-demi'>500</div>
+            <div className='balloons-text franklin-gothic-medium'>Balloons Diverted to UVA Health Children's</div>
+            <div className='ballons-image'>
+                <img src={balloonsImage}></img>
+            </div>
+                <svg className='connecting-line-container'height='620' width='1000'>
+                    <path className='connecting-line' d={connectorPath}></path>
+                </svg>
+            <div className='footer franklin-gothic-standard'>
+                <span className='franklin-gothic-demi'>
+                    CONGRATS<br/> 
+                </span>
+                <span className='franklin-gothic-book'>
+                    TO ALL OUR <br/>
+                </span>
+                <span className='franklin-gothic-demi'>
+                    2024 GRADS
+                </span>
+                <span className='wahoowa franklin-gothic-demi'>
+                    <i>WAHOOWA!</i>
+                </span>
             </div>
         </>
     )
