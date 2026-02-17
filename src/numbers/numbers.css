@@ -1,6 +1,32 @@
 #root {
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+/* Utility Classes */
+
+[class*='franklin-gothic'] {
+    font-family: 'ITC Franklin Gothic Std';
+}
+
+.franklin-gothic-demi {
+    font-weight: 500;
+}
+
+.franklin-gothic-book {
+    font-weight: lighter;
+}
+
+.franklin-gothic-medium {
+    font-weight: lighter;
+    letter-spacing: .5rem;
+}
+
+
+
+
+/* Component-Specific Styling */
 
 .header {
     display: flex;
@@ -29,8 +55,6 @@
     .title-text {
         position: relative;
         max-width: fit-content;
-        font-family: 'ITC Franklin Gothic Std';
-        font-weight: 500;
         font-size: 16vw;
         letter-spacing: 2rem;
         text-align: left;
@@ -74,16 +98,14 @@
     .numbers-text {
         flex: 0;
         display: flex;
-        font-family: 'ITC Franklin Gothic Std';
         font-size: 7vw;
-        font-weight: lighter;
         line-height: 1em;
         align-self: flex-end;
         text-align: left;
     }
     .by-the-numbers::after {
         content: '';
-        bottom: 0;
+        bottom: -1vh;
         left: 3.3vw;
         height: 5vh;
         width: 90.7vw;
@@ -93,9 +115,30 @@
     }
 }
 
-/* TODO: connect lines with underlayed images */
 .connecting-line {
     border-left: 12px solid #e57200;
     height: 500px;
     margin-left: 50%;
+}
+
+.degree-image {
+    margin-top: 1vh;
+}
+
+.degree-number {
+    flex: 0;
+    font-size: 27vw;
+    line-height: .7em;
+}
+
+.degree-text {
+    font-size: 3.5vw;
+}
+
+.degree-break {
+    background-color: #e57200;
+    height: 1.5vh;
+    width: 90vw;
+    margin-top: 8vh;
+    margin-bottom: 8vh; 
 }
