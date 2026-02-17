@@ -121,6 +121,11 @@
     margin-left: 50%;
 }
 
+.degree-section .connecting-line {
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+
 .degree-image {
     margin-top: 1vh;
 }
@@ -141,4 +146,25 @@
     width: 90vw;
     margin-top: 8vh;
     margin-bottom: 8vh; 
+}
+
+.graduate-degrees-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.graduate-degrees-subsection {
+    flex: 1;
+}
+
+.graduate-degrees-number {
+    color: #e57200;
+    font-size: 10vw;
+    line-height: .5em;
+}
+
+.graduate-degrees-text {
+    font-size: 3.5vw;
 }
