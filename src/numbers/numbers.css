@@ -63,7 +63,7 @@
     
      .title-text::after {
         content: '';
-        bottom: 5.5vh;
+        bottom: 20%;
         left: 0;
         height: 5vh;
         width: 103%;
@@ -166,4 +166,33 @@
 
 .graduate-degrees-text {
     font-size: 3.5vw;
+}
+
+.fast-degrees-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.stopwatch-image {
+    flex: 0;
+}
+.fast-degrees-text-section {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fast-degrees-number {
+    font-size: 33vw;
+    line-height: .7em;
+}
+
+.fast-degrees-text {
+    max-width: 100%;
+    font-size: 4vw;
+    text-wrap: wrap;
+    text-align: left;
+    line-height: 1em;
 }

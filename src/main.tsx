@@ -8,9 +8,9 @@ import Numbers from './numbers/Numbers.tsx'
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="transcript" element={<Transcript />} />
-      <Route path="numbers" element={<Numbers />} />
+      <Route path="uva-practicum" element={<App />} />
+      <Route path="uva-practicum/transcript" element={<Transcript />} />
+      <Route path="uva-practicum/numbers" element={<Numbers />} />
     </Routes>
   </BrowserRouter>,
 );
