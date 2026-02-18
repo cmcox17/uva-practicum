@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import './App.css'
 
 function App() {
@@ -11,14 +12,14 @@ function App() {
       </div>
       <div className='page-links'>
         <button>
-          <a href="./uva-practicum/transcript" target="_self">
+          <Link to="./uva-practicum/transcript" target='_self'>
             <h1>Transcript</h1>
-          </a>
+          </Link>
         </button>
         <button>
-          <a href="./uva-practicum/numbers" target="_self">
+          <Link to="./uva-practicum/numbers" target="_self">
             <h1>2024 By The Numbers</h1>
-          </a>
+          </Link>
         </button>
       </div>
     </>
