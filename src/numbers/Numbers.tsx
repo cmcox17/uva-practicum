@@ -1,5 +1,6 @@
 // styling
 import './numbers.css';
+import * as motion from "motion/react-client";
 
 // image imports
 import balloonsImage from '../assets/balloons.png';
@@ -13,27 +14,77 @@ import stopwatchImage from '../assets/stopwatch.png';
 import sustainableImage from '../assets/sustainable.png';
 import waterTowersImage from '../assets/water_towers.png';
 import { UndergradPieChart } from './UndergradPieChart';
+import type { HTMLMotionProps, SVGMotionProps } from 'motion/react';
 
 function Numbers() {
     // constants
     const connectorPath = 'M500 0 V 620';
     const snakePath = 'M680 0 V 110 H 1350 V 220 H 10 V 330 H 1350 V 440 H 10 V550 H 680 V 660';
+    const titleTextMotionProps: HTMLMotionProps<'div'> = {
+        initial: {
+            opacity: 0
+        },
+        whileInView: {
+            opacity: 1
+        },
+        transition: {
+            duration: 2
+        }
+    }
+    const connectingLineMotionProps: SVGMotionProps<SVGPathElement> = {
+        initial: { pathLength: 0 },
+        whileInView: { pathLength: 1 },
+        transition: { duration: 0.5, delay: 0.25 }
+    }
+    const gradDegreeMotionProps: HTMLMotionProps<'div'> = {
+        initial: {
+            y: 25,
+            opacity: 0
+        },
+        whileInView: {
+            y: 0,
+            opacity: 1
+        },
+        transition: {
+            duration: 1,
+            ease: 'easeInOut'
+        }
+    }
+
     return (
         <>
             <div className='header'>
                 <div className='header-image'>
-                    <img src={headerImage}></img>
+                    <motion.img
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                        viewport={{once: true}}
+                        src={headerImage}
+                    />
                 </div>
                 <div className='title'>
-                    <div className='title-text franklin-gothic-demi'>FINAL</div>
-                    <div className='title-text franklin-gothic-demi'>EXERCISES</div>
+                    <motion.div {...titleTextMotionProps} className='title-text franklin-gothic-demi'>FINAL</motion.div>
+                    <motion.div {...titleTextMotionProps} className='title-text franklin-gothic-demi'>EXERCISES</motion.div>
                     <div className='by-the-numbers'>           
-                        <div className='year-text'>2024</div>
-                        <span className='numbers-text franklin-gothic-book'>BY THE NUMBERS</span>
+                        <motion.div
+                            {...titleTextMotionProps}
+                            transition={{ ...titleTextMotionProps.transition, delay: 0.5 }}
+                            className='year-text'
+                        >
+                            2024
+                        </motion.div>
+                        <motion.span
+                            {...titleTextMotionProps}
+                            transition={{ ...titleTextMotionProps.transition, delay: 1 }}
+                            className='numbers-text franklin-gothic-book'
+                        >
+                            BY THE NUMBERS
+                        </motion.span>
                     </div>
                 </div>
-            <svg className='connecting-line-container'height='620' width='1000'>
-                <path className='connecting-line' d={connectorPath}></path>
+            <svg className='connecting-line-container' height='620' width='1000'>
+                <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
             </svg>
             </div>
             <div className='degree-image'>
@@ -42,17 +93,17 @@ function Numbers() {
             <div className='degree-section'>
                 <div className='degree-number franklin-gothic-demi'>7616</div>
                 <div className='degree-text franklin-gothic-medium'>Total Number of Degrees Awarded</div>
-                <hr className='degree-break'></hr>
+                <motion.hr initial={{ width: 0 }} whileInView={{width: '100%'}} transition={{ duration: 0.4, ease: 'easeOut' }} className='degree-break' />
                 <div className='degree-number franklin-gothic-demi'>4394</div>
                 <div className='degree-text franklin-gothic-medium'>Total Number of Baccalaureate Degrees</div>
                 <svg className='connecting-line-container'height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='degree-chart'>
                     <UndergradPieChart />
                 </div>
                 <svg className='connecting-line-container' height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='degree-text franklin-gothic-medium'>Graduate and Professional Degrees</div>
                 <div className='graduate-degrees-section'>
@@ -61,26 +112,26 @@ function Numbers() {
                         <div className='graduate-degrees-image'>
                             <img src={phdImage}></img>
                         </div>
-                        <div className='graduate-degrees-number franklin-gothic-demi'>436</div>
-                        <div className='graduate-degrees-text franklin-gothic-medium'>Ph.Ds</div>
+                        <motion.div {...gradDegreeMotionProps} transition={{...gradDegreeMotionProps.transition, delay: 0}}  className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
+                        <motion.div {...gradDegreeMotionProps} transition={{...gradDegreeMotionProps.transition, delay: 1.5}} className='graduate-degrees-text franklin-gothic-medium'>Ph.Ds</motion.div>
                     </div>
                     <div className='graduate-degrees-subsection'>
                         <div className='graduate-degrees-image'>
                             <img src={jdImage}></img>
-                        <div className='graduate-degrees-number franklin-gothic-demi'>436</div>
-                        <div className='graduate-degrees-text franklin-gothic-medium'>JDs</div>
+                        <motion.div {...gradDegreeMotionProps} transition={{...gradDegreeMotionProps.transition, delay: 0.5}} className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
+                        <motion.div {...gradDegreeMotionProps} transition={{...gradDegreeMotionProps.transition, delay: 2}} className='graduate-degrees-text franklin-gothic-medium'>JDs</motion.div>
                         </div>
                     </div>
                     <div className='graduate-degrees-subsection'>
                         <div className='graduate-degrees-image'>
                             <img src={mdImage}></img>
-                        <div className='graduate-degrees-number franklin-gothic-demi'>436</div>
-                        <div className='graduate-degrees-text franklin-gothic-medium'>MDs</div>
+                        <motion.div {...gradDegreeMotionProps} transition={{...gradDegreeMotionProps.transition, delay: 1}} className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
+                        <motion.div {...gradDegreeMotionProps} transition={{...gradDegreeMotionProps.transition, delay: 2.5}} className='graduate-degrees-text franklin-gothic-medium'>MDs</motion.div>
                         </div>
                     </div>
                 </div>
                 <svg className='connecting-line-container'height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='fast-degrees-section'>
                     <div className='stopwatch-image'>
@@ -92,7 +143,7 @@ function Numbers() {
                     </div>
                 </div>
                 <svg className='connecting-line-container'height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='first-gen-section'>
                     <div className='first-gen-image'>
@@ -102,7 +153,7 @@ function Numbers() {
                     <div className='first-gen-text franklin-gothic-medium'>First Generation College Graduates</div>
                 </div>
                 <svg className='connecting-line-container'height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='age-section'>
                     <div className='youngest-age-number'>19</div>
@@ -114,7 +165,7 @@ function Numbers() {
                     <div className='oldest-age-text'>Age of Oldest Graduate</div>
                 </div>
                 <svg className='connecting-line-container'height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
             </div>
             {/*TODO: build text into doc and style, rather than using screenshots */}
@@ -132,7 +183,7 @@ function Numbers() {
                 <img src={balloonsImage}></img>
             </div>
                 <svg className='connecting-line-container'height='620' width='1000'>
-                    <path className='connecting-line' d={connectorPath}></path>
+                    <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
             <div className='footer franklin-gothic-standard'>
                 <span className='franklin-gothic-demi'>

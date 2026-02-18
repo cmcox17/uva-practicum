@@ -10,8 +10,13 @@ function App() {
         </h1>
       </div>
       <div>
-        <a href="./transcript" target="_self">
+        <a href="./uva-practicum/transcript" target="_self">
           <h1>Transcript</h1>
+        </a>
+      </div>
+      <div>
+        <a href="./uva-practicum/numbers" target="_self">
+          <h1>2024 By The Numbers</h1>
         </a>
       </div>
     </>

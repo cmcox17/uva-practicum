@@ -58,7 +58,7 @@ export const UndergradPieChart = () => {
     return (
         
         <PieChart
-            colors={['#e57200', '#232d4b']}
+            colors={['#e57200', '#232d4b', 'darkGrey']}
             slotProps={{ tooltip: {trigger: 'none'}}}
             onHighlightChange={(highlightedItem) => {
                 if (highlightedItem && highlightedItem.dataIndex !== undefined) {
