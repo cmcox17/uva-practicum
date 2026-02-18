@@ -39,7 +39,7 @@ function Numbers() {
             pathLength: 1
         },
         transition: {
-            duration: 0.5,
+            duration: 0.8,
             delay: 0.5
         },
         viewport: {

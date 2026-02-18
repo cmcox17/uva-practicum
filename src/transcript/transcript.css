@@ -1,4 +1,8 @@
 
+
+.content {
+    max-width: 70%
+}
 p {
     text-align: left;
     font-family: 'franklin-gothic-urw', 'arial', helvetica, sans-serif;
@@ -10,7 +14,7 @@ p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
+    margin-inline-start: 1px;
     margin-inline-end: 0px;
     unicode-bidi: isolate;
 }

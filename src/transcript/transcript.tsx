@@ -2,8 +2,8 @@ import './transcript.css';
 
 function Transcript() {
     return (
-        <>
-        <h1>Practicum Transcript HTML</h1>
+        <div className='content'>
+            <h1>Practicum Transcript HTML</h1>
             <p>
                 "The Indy Autonomous Challenge is really a battle of algorithms more than it is a battle of vehicles. You don't really know where the limit is until you exceed it," Trent Weiss said. "On a racetrack that has rather dramatic consequences, if you can push these systems to their absolute limit and they still function, then you can be pretty sure they're going to work on the highway."
             </p>
@@ -52,7 +52,7 @@ function Transcript() {
             <p>
                 "It kind of feels like American muscle is back."
             </p>
-        </>
+        </div>
     );
 }
 
