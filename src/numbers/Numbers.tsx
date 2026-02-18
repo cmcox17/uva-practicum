@@ -148,13 +148,15 @@ function Numbers() {
             <div className='degree-section'>
                 <motion.div {...degreeMotionProps} className='degree-number franklin-gothic-demi'>7616</motion.div>
                 <motion.div {...degreeMotionProps} className='degree-text franklin-gothic-medium'>Total Number of Degrees Awarded</motion.div>
-                <motion.hr initial={{ width: 0 }} whileInView={{width: '100%'}} viewport={{once: true}} transition={{ duration: 0.4, ease: 'easeOut' }} className='degree-break' />
+                <svg className='degree-break' height='200' width='2000'>
+                    <motion.path initial={{ pathLength: 0 }} whileInView={{pathLength: 1}} transition={{duration: 1, delay: 0.5, ease: 'easeInOut'}} viewport={{once: true}} d={'M 0 0 H 2000'}/>
+                </svg>
                 <motion.div {...degreeMotionProps} className='degree-number franklin-gothic-demi'>4394</motion.div>
                 <motion.div {...degreeMotionProps} className='degree-text franklin-gothic-medium'>Total Number of Baccalaureate Degrees</motion.div>
-                <svg className='connecting-line-container'height='620' width='1000'>
+                <svg className='connecting-line-container' height='620' width='1000'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
-                <motion.div {...degreeMotionProps} className='degree-chart'>
+                <motion.div {...degreeMotionProps} className='degree-chart-container'>
                     <UndergradPieChart />
                 </motion.div>
                 <svg className='connecting-line-container' height='620' width='1000'>

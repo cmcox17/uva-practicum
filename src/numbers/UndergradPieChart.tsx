@@ -10,7 +10,7 @@ const StyledNumber = styled('text')(() => ({
   fill: '#e57200',
   textAnchor: 'middle',
   dominantBaseline: 'central',
-  fontSize: 200,
+  fontSize: '10rem',
   fontFamily: 'ITC Franklin Gothic Std',
   fontWeight: 500
 }));
@@ -19,7 +19,7 @@ const StyledText = styled('text')(() => ({
     fill: '#232d4b',
     textAnchor: 'middle',
     dominantBaseline: 'central',
-    fontSize: 45,
+    fontSize: '2rem',
     fontFamily: 'ITC Franklin Gothic Std',
     fontWeight: 'lighter'
 }));
@@ -58,6 +58,7 @@ export const UndergradPieChart = () => {
     return (
         
         <PieChart
+            className='degree-chart'
             colors={['#e57200', '#232d4b', 'white']}
             slotProps={{ tooltip: {trigger: 'none'}}}
             onHighlightChange={(highlightedItem) => {
@@ -66,8 +67,8 @@ export const UndergradPieChart = () => {
                 }
             }}
             series={[{
-                innerRadius: 375,
-                outerRadius: 500,
+                innerRadius: '70%',
+                outerRadius: '90%',
                 data: undergradData,
                 highlightScope: {'fade': 'global', 'highlight': 'item'},
                 faded: { color: 'grey' }

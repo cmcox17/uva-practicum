@@ -1,4 +1,320 @@
+/* For viewing on 1220p+ monitors */
+@media only screen
+and (min-width : 1220px) {
+    #root {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* set text color for entire document - can be overriden */
+        color: #232d4b;
+        font-size: 16px;
+    }
 
+    /* Utility Classes */
+
+    [class*='franklin-gothic'] {
+        font-family: 'ITC Franklin Gothic Std';
+    }
+
+    .franklin-gothic-demi {
+        font-weight: 500;
+    }
+
+    .franklin-gothic-book {
+        font-weight: lighter;
+    }
+
+    .franklin-gothic-medium {
+        font-weight: lighter;
+        letter-spacing: .5rem;
+    }
+
+
+
+
+    /* Component-Specific Styling */
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .connecting-line-container {
+            margin: 0;
+        }
+    }
+
+    .header-image {
+        display: grid;
+        height: fit-content;
+        width: 100%;
+
+        img {
+            width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .title {
+        line-height: 30rem;
+
+        .title-text {
+            position: relative;
+            max-width: fit-content;
+            font-size: 12rem;
+            letter-spacing: 2rem;
+            text-align: left;
+            margin-left: 5%;
+            line-height: normal;
+        }
+        
+        .title-text::after {
+            content: '';
+            bottom: 2.5rem;
+            left: -1rem;
+            height: 1.75rem;
+            width: 103%;
+            background: #e57200;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .by-the-numbers {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 5vw;
+            height: 34vh;
+            text-align: left;
+            margin-left: 2%;
+            max-width: 100vw
+        }
+        .year-text {
+            flex: 0 1;
+            font-family: 'Adobe Caslon Pro';
+            font-size: 30rem;
+            font-weight: bold;
+            font-style: italic;
+            text-align: left;
+            line-height: 1em;
+            vertical-align: bottom;
+            margin-bottom: -5%;
+        }
+        .numbers-text {
+            flex: 0;
+            display: flex;
+            font-size: 11rem;
+            line-height: 1em;
+            align-self: flex-end;
+            text-align: left;
+        }
+        .by-the-numbers::after {
+            content: '';
+            bottom: -.3rem;
+            left: 3.3rem;
+            height: 5vh;
+            width: 90.7vw;
+            background: #e57200;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    .connecting-line {
+        fill: none;
+        stroke: #e57200;
+        stroke-width: 18px;
+    }
+
+    .connecting-line-container {
+        margin-top: 8vh;
+        margin-bottom: 8vh;
+    }
+        [class*=-number] {
+            font-size: 28rem;
+            line-height: .8em;
+        }
+
+        [class*=-text] {
+            font-size: 4rem;
+            line-height: 1em;
+        }
+
+    .degree-chart-container {
+        flex: 0 1 auto;
+        width: 100%;
+        height: 80vh;
+    }
+
+    .degree-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .graduate-degrees-number {
+            /* override text color and font size */
+            color: #e57200;
+            font-size: 12rem;
+        }
+    }
+
+
+    .degree-image {
+        margin-top: 1vh;
+        scale: 90%;
+    }
+
+    .degree-number {
+        flex: 0;
+        line-height: .7em;
+    }
+
+    .degree-text {
+        font-size: 6rem;
+        line-height: 1.5em;
+    }
+
+    .degree-break {
+        fill: none;
+        stroke: #e57200;
+        stroke-width: 18px;
+        height: 1.5vh;
+        width: 80vw;
+        margin-top: 8vh;
+        margin-bottom: 8vh; 
+    }
+    .graduate-degrees-section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+
+    .graduate-degrees-subsection {
+        flex: 1;
+    }
+
+    .graduate-degrees-text {
+        font-size: 5rem;
+    }
+
+    .fast-degrees-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5vw;
+    }
+
+    .stopwatch-image {
+        flex: 0;
+    }
+    .fast-degrees-text-section {
+        flex: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fast-degrees-number {
+        font-size: 35rem;
+        line-height: .7em;
+    }
+
+    .fast-degrees-text {
+        max-width: 100%;
+        text-wrap: wrap;
+        text-align: left;
+    }
+
+    .age-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+    }
+
+    .first-gen-number {
+        font-size: 25rem;
+        line-height: .8em;
+    }
+
+    .youngest-age-number {
+        margin-bottom: 1rem;
+    }
+
+    .youngest-age-text {
+        text-wrap: wrap;
+        max-width: 50vw;
+    }
+
+    .snake {
+        fill: none;
+        stroke: #e57200;
+        stroke-width: 18px;
+    }
+
+    .quote-header {
+        font-size: 4rem;
+        text-align: left;
+        max-width: 80vw;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .quote-paragraph {
+        font-size: 2rem;
+        text-align: left;
+        max-width: 80vw;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .water-bottle-number {
+        margin-bottom: 1.5rem
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 15rem;
+        line-height: 1em;
+        vertical-align: middle;
+        text-align: left;
+
+        background-image: url('../assets/footer.png');
+        background-size: contain;
+        width: 100%;
+        min-height: 1666px;
+        background-size: contain;
+        background-position: center;
+        margin-top: -15rem;
+        z-index: -1;
+        
+        .wahoowa {
+            position: relative;
+            z-index: 2;
+        }
+        .wahoowa::after {
+            content: '';
+            bottom: 1rem;
+            left: 1rem;
+            height: 3vh;
+            width: 75rem;
+            background: #e57200;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+}
 /* For viewing on 1440p+ monitors */
 @media only screen
 and (min-width : 2200px) {
@@ -148,7 +464,7 @@ and (min-width : 2200px) {
             line-height: 1em;
         }
 
-    .degree-chart {
+    .degree-chart-container {
         flex: 0 1 auto;
         width: 100%;
         height: 80vh;
@@ -181,9 +497,11 @@ and (min-width : 2200px) {
     }
 
     .degree-break {
-        background-color: #e57200;
+        fill: none;
+        stroke: #e57200;
+        stroke-width: 18px;
         height: 1.5vh;
-        width: 90vw;
+        width: 80vw;
         margin-top: 8vh;
         margin-bottom: 8vh; 
     }
