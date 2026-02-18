@@ -168,22 +168,22 @@ function Numbers() {
                         <motion.div {...degreeMotionProps} className='graduate-degrees-image'>
                             <img src={phdImage}></img>
                         </motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.8}} className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 3}} className='graduate-degrees-text franklin-gothic-medium'>Ph.Ds</motion.div>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.4}} className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.3}} className='graduate-degrees-text franklin-gothic-medium'>Ph.Ds</motion.div>
                     </div>
                     <div className='graduate-degrees-subsection'>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1}} className='graduate-degrees-image'>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: .8}} className='graduate-degrees-image'>
                             <img src={jdImage}></img>
                         </motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.2}} className='graduate-degrees-number franklin-gothic-demi'>299</motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 3.4}} className='graduate-degrees-text franklin-gothic-medium'>JDs</motion.div>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.7}} className='graduate-degrees-number franklin-gothic-demi'>299</motion.div>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.6}} className='graduate-degrees-text franklin-gothic-medium'>JDs</motion.div>
                     </div>
                     <div className='graduate-degrees-subsection'>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.4}} className='graduate-degrees-image'>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.1}} className='graduate-degrees-image'>
                             <img src={mdImage}></img>
                         </motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.6}} className='graduate-degrees-number franklin-gothic-demi'>144</motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 3.8}} className='graduate-degrees-text franklin-gothic-medium'>MDs</motion.div>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.0}} className='graduate-degrees-number franklin-gothic-demi'>144</motion.div>
+                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.9}} className='graduate-degrees-text franklin-gothic-medium'>MDs</motion.div>
                     </div>
                 </div>
                 <svg className='connecting-line-container'height='620' width='1000'>
