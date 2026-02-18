@@ -29,10 +29,10 @@ const PieCenterLabel = (props: {text: string, value: number}) => {
   return (
     <>
         <StyledNumber x={left + width / 2} y={(top + height / 2) - 100}>
-            {props.value}
+            {props.value ? props.value : ''}
         </StyledNumber>
         <StyledText x={left + width / 2} y={(top + height / 2) + 50}>
-            {props.text}
+            {props.text ?? 'Baccalaureates By School'}
         </StyledText>
     </>
   );
@@ -58,11 +58,10 @@ export const UndergradPieChart = () => {
     return (
         
         <PieChart
-            colors={['#e57200', '#232d4b', 'darkGrey']}
+            colors={['#e57200', '#232d4b', 'white']}
             slotProps={{ tooltip: {trigger: 'none'}}}
             onHighlightChange={(highlightedItem) => {
                 if (highlightedItem && highlightedItem.dataIndex !== undefined) {
-                    console.log(highlightedItem);
                     setHighlightedData(undergradData[highlightedItem.dataIndex])
                 }
             }}
@@ -75,16 +74,17 @@ export const UndergradPieChart = () => {
             }]}
             sx={{
                 [`.${pieArcClasses.root}`]: {
-                    cursor: 'pointer'
-                }
+                    cursor: 'pointer',
+                    stroke: 'black',
+                    strokeWidth: '2px'
+                },
             }}
             {...settings}
-        >
-            {highlightedData ? 
-                <PieCenterLabel
-                    text={highlightedData.label}
-                    value={highlightedData.value}
-            /> : ''}
+        > 
+            <PieCenterLabel
+                text={highlightedData?.label ?? 'Baccalaureates by School'}
+                value={highlightedData?.value ?? 0}
+            />
         </PieChart>
     )
 }
