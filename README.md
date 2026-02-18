@@ -13,6 +13,7 @@ The second part was to build out a web page from a provided .psd file. This is h
 - Material UI (styling and some components)
 - MUI X (charting)
 - Motion (animation)
+- React-Router (page routing)
 
 ## Notes:
 
@@ -21,7 +22,6 @@ For the Transcript portion of the assignment, I was unsure how many liberties to
 - Grammar and Syntax (how do the articles break up multi-sentence quotes? How do they introduce new voices?)
 
 I also double-checked the grammar and spelling in the original transcript in case of typos, though I believe I only found one, a comma where there should have been a period.
-
 
 Going in, I was very familiar with most of the tooling. The only exception is Motion, which I have not used before. Much of my effort (and enjoyment) with the project came as a result of learning how to utilize it for animation. I particularly enjoyed figuring out how to make a 'typewriter' style effect for the quotes at the bottom of the '2024 By The Numbers' Page.
 
