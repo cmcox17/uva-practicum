@@ -112,7 +112,7 @@ body {
         .numbers-text {
             flex: 0;
             display: flex;
-            font-size: 11rem;
+            font-size: 8rem;
             line-height: 1em;
             align-self: flex-end;
             text-align: left;
@@ -145,7 +145,7 @@ body {
         }
 
         [class*=-text] {
-            font-size: 4rem;
+            font-size: 5rem;
             line-height: 1em;
         }
 
@@ -175,11 +175,6 @@ body {
     .degree-number {
         flex: 0;
         line-height: .7em;
-    }
-
-    .degree-text {
-        font-size: 6rem;
-        line-height: 1.5em;
     }
 
     .degree-break {
@@ -453,8 +448,8 @@ body {
     }
 }
 
-/* slight correction on the graduate degree section for tablets in portrait mode */
-@media only screen and (max-width: 1200px) and (orientation: portrait) {
+/* slight correction on the graduate degree section for medium/small tablets */
+@media only screen and (max-width: 1200px) {
     .graduate-degrees-section {
         flex-wrap: wrap;
     }
@@ -480,6 +475,7 @@ body {
         }
     }
     .title {
+        margin-left: 0;
         .title-text {
             font-size: 3rem;
             letter-spacing: .5rem;
@@ -504,8 +500,9 @@ body {
         }
 
         .by-the-numbers::after {
-            height: .7rem;
+            height: .4rem;
             left: .5rem;
+            bottom: .1rem;
             width: 20rem;
         }
     }
@@ -567,7 +564,7 @@ body {
         }
 
         .graduate-degrees-image {
-            scale: 80%
+            scale: 70%
         }
     }
 
