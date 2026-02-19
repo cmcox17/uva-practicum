@@ -24,7 +24,7 @@ body {
   gap: 10px
 }
 
-@media (min-width: 667px) {
+@media (min-width: 668px) {
   .mobile-header {
     display: none
   }

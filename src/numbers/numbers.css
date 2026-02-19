@@ -1,41 +1,45 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh; /* Use 100vh for full viewport height */
+    width: 100vw;
+    margin: 0;         /* Remove default browser margin (usually 8px) */
+    padding: 0;        /* Remove default browser padding */
+}
+#root {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* set text color for entire document - can be overriden */
+    color: #232d4b;
+    font-size: 16px;
+}
+/* Utility Classes */
+
+[class*='franklin-gothic'] {
+    font-family: 'ITC Franklin Gothic Std';
+}
+
+.franklin-gothic-demi {
+    font-weight: 500;
+}
+
+.franklin-gothic-book {
+    font-weight: lighter;
+}
+
+.franklin-gothic-medium {
+    font-weight: lighter;
+    letter-spacing: .5rem;
+}
+
 /* For viewing on 1220p+ monitors */
-@media only screen
-and (min-width : 1220px) {
-    #root {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* set text color for entire document - can be overriden */
-        color: #232d4b;
-        font-size: 16px;
-    }
-
-    /* Utility Classes */
-
-    [class*='franklin-gothic'] {
-        font-family: 'ITC Franklin Gothic Std';
-    }
-
-    .franklin-gothic-demi {
-        font-weight: 500;
-    }
-
-    .franklin-gothic-book {
-        font-weight: lighter;
-    }
-
-    .franklin-gothic-medium {
-        font-weight: lighter;
-        letter-spacing: .5rem;
-    }
-
-
-
-
+@media only screen and (max-width: 2200px) {
     /* Component-Specific Styling */
-
     .header {
         display: flex;
         flex-direction: column;
@@ -130,7 +134,7 @@ and (min-width : 1220px) {
     .connecting-line {
         fill: none;
         stroke: #e57200;
-        stroke-width: 18px;
+        stroke-width: 2px;
     }
 
     .connecting-line-container {
@@ -256,7 +260,7 @@ and (min-width : 1220px) {
     .snake {
         fill: none;
         stroke: #e57200;
-        stroke-width: 18px;
+        stroke-width: 1px;
     }
 
     .quote-header {
@@ -315,42 +319,172 @@ and (min-width : 1220px) {
         }
     }
 }
+
+/* For viewing on mobile devices */
+@media only screen and (max-width: 990px) and (orientation: portrait) {
+    .franklin-gothic-medium {
+        letter-spacing: .2rem;
+    }
+    body {
+        margin: 0;
+        text-size-adjust: 100%;
+    }
+    .header-image {
+        display: grid;
+        height: 100%;
+        width: 100vw;
+        img {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+    }
+    .title {
+        .title-text {
+            font-size: 3rem;
+            letter-spacing: .5rem;
+        }
+
+        .title-text::after {
+            bottom: .4rem;
+            left:  -.2rem;
+            height: .75rem;
+        }
+        
+        .by-the-numbers {
+            height: fit-content;
+        }
+
+        .year-text {
+            font-size: 4rem;
+        }
+
+        .numbers-text {
+            font-size: 1.5rem;
+        }
+
+        .by-the-numbers::after {
+            height: .7rem;
+            left: .5rem;
+            width: 80vw;
+        }
+    }
+    .connecting-line {
+        stroke-width: 2px;
+    }
+
+    .degree-image {
+        scale: 50%;
+        margin: -9rem
+    }
+
+    [class*=-number] {
+        font-size: 8rem;
+        line-height: .8em;
+    }
+
+    [class*=-text] {
+        font-size: 2rem;
+        line-height: 1em;
+        max-width: 90vw;
+    }
+
+    .degree-chart-container {
+        height: 55vh;
+        margin-bottom: 10vh;
+    }
+    
+    .mobile-value {
+        color: #e57200;
+        font-size: 2.5rem;
+    }
+
+    .mobile-label {
+        color: #232d4b;
+        font-size: 1.5rem;
+    }
+
+    .graduate-degrees-section {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+
+        .graduate-degrees-subsection {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .graduate-degrees-number {
+            font-size: 8rem;
+        }
+
+        .graduate-degrees-text {
+            font-size: 2rem
+        }
+
+        .graduate-degrees-image {
+            scale: 80%
+        }
+    }
+
+    .fast-degrees-section {
+        width: 100vw;
+        flex-direction: column;
+        max-height: fit-content;
+    }
+    .stopwatch-image {
+        scale: 40%;
+        margin: -10rem;
+    }
+    .fast-degrees-text {
+        text-align: center
+    }
+
+    .snake {
+        fill: none;
+        stroke: #e57200;
+        stroke-width: 1px;
+        width: 100vw;
+    }
+    
+    .first-gen-image {
+        scale: 40%;
+        margin: -10rem;
+    }
+    
+    .quote-header {
+        font-size: 2rem;
+        text-wrap: wrap;
+    }
+
+    .quote-paragraph {
+        font-size: 1rem;
+        text-wrap: wrap;
+    }
+
+    .footer {
+        font-size: 3rem;
+        min-height: fit-content;
+        margin-top: -4rem;
+        .wahoowa {
+            margin-bottom: 3rem;
+        }
+        .wahoowa::after {
+            bottom: .2rem;
+            left: .2rem;
+            width: 15rem;
+            height: .6rem;
+        }
+    }
+}
 /* For viewing on 1440p+ monitors */
 @media only screen
 and (min-width : 2200px) {
-    #root {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* set text color for entire document - can be overriden */
-        color: #232d4b;
-        font-size: 16px;
-    }
-
-    /* Utility Classes */
-
-    [class*='franklin-gothic'] {
-        font-family: 'ITC Franklin Gothic Std';
-    }
-
-    .franklin-gothic-demi {
-        font-weight: 500;
-    }
-
-    .franklin-gothic-book {
-        font-weight: lighter;
-    }
-
-    .franklin-gothic-medium {
-        font-weight: lighter;
-        letter-spacing: .5rem;
-    }
-
-
-
-
     /* Component-Specific Styling */
 
     .header {
@@ -447,7 +581,7 @@ and (min-width : 2200px) {
     .connecting-line {
         fill: none;
         stroke: #e57200;
-        stroke-width: 18px;
+        stroke-width: 1px;
     }
 
     .connecting-line-container {
@@ -572,7 +706,7 @@ and (min-width : 2200px) {
     .snake {
         fill: none;
         stroke: #e57200;
-        stroke-width: 18px;
+        stroke-width: 1px;
     }
 
     .quote-header {

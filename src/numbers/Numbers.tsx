@@ -12,11 +12,14 @@ import statSixImage from '../assets/stat_6.png';
 import stopwatchImage from '../assets/stopwatch.png';
 import { UndergradPieChart } from './UndergradPieChart';
 import { stagger, type HTMLMotionProps, type SVGMotionProps, type Variants } from 'motion/react';
+import { useMediaQuery } from '@mui/material';
 
 function Numbers() {
     // constants
-    const connectorPath = 'M500 0 V 620';
-    const snakePath = 'M680 0 V 110 H 1350 V 220 H 10 V 330 H 1350 V 440 H 10 V550 H 680 V 660';
+    /** used to determine if current format is phone or not */
+    const isSmall = useMediaQuery('(max-width: 990px)');
+    const connectorPath = 'M65 0 V 50';
+    const snakePath = 'M65 0 V 8 H 120 V 16 H 10 V 24 H 120 V 32 H 10 V 40 H 65 V 48';
     const titleTextMotionProps: HTMLMotionProps<'div'> = {
         initial: {
             opacity: 0
@@ -101,7 +104,9 @@ function Numbers() {
         initial: {opacity: 0},
         whileInView: {opacity: 1, transition: {duration: 1.5, ease: 'easeInOut'}}
     }
-    const childTypewriterBody: Variants = {
+    // typewriter doesn't work in smaller formats since text is wrapped,
+    // so just have it fade in after the title
+    const childTypewriterBody: Variants = isSmall ? childTypewriterTitle : {
         initial: {width: 0},
         whileInView: {width: '100%', transition: {duration: 1.5}}
     }
@@ -138,7 +143,7 @@ function Numbers() {
                         </motion.span>
                     </div>
                 </div>
-            <svg className='connecting-line-container' height='620' width='1000'>
+            <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                 <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
             </svg>
             </div>
@@ -153,13 +158,13 @@ function Numbers() {
                 </svg>
                 <motion.div {...degreeMotionProps} className='degree-number franklin-gothic-demi'>4394</motion.div>
                 <motion.div {...degreeMotionProps} className='degree-text franklin-gothic-medium'>Total Number of Baccalaureate Degrees</motion.div>
-                <svg className='connecting-line-container' height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <motion.div {...degreeMotionProps} className='degree-chart-container'>
                     <UndergradPieChart />
                 </motion.div>
-                <svg className='connecting-line-container' height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <motion.div {...degreeMotionProps} className='degree-text franklin-gothic-medium'>Graduate and Professional Degrees</motion.div>
@@ -186,7 +191,7 @@ function Numbers() {
                         <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.9}} className='graduate-degrees-text franklin-gothic-medium'>MDs</motion.div>
                     </div>
                 </div>
-                <svg className='connecting-line-container'height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='fast-degrees-section'>
@@ -198,7 +203,7 @@ function Numbers() {
                         <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.3}} className='fast-degrees-text franklin-gothic-medium'>Degrees Earned in Two Years</motion.div>
                     </div>
                 </div>
-                <svg className='connecting-line-container'height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='first-gen-section'>
@@ -208,19 +213,19 @@ function Numbers() {
                     <motion.div {...degreeMotionProps} className='first-gen-number franklin-gothic-demi'>1092</motion.div>
                     <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 0.5}} className='first-gen-text franklin-gothic-medium'>First Generation College Graduates</motion.div>
                 </div>
-                <svg className='connecting-line-container'height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
                 <div className='age-section'>
                     <motion.div {...degreeMotionProps} className='youngest-age-number'>19</motion.div>
                     <motion.div {...degreeMotionProps} className='youngest-age-text'>Age of Youngest Graduates (There are Six!)</motion.div>
-                    <svg height='660' width='1360'>
+                    <svg className='snake-svg' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 48'>
                         <motion.path {...connectingLineMotionProps} transition={{delay: 1, duration: 2, ease: 'easeInOut'}} className='snake' d={snakePath} />
                     </svg>
                     <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1}} className='oldest-age-number'>71</motion.div>
                     <motion.div {...degreeMotionProps} className='oldest-age-text'>Age of Oldest Graduate</motion.div>
                 </div>
-                <svg className='connecting-line-container'height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
             </div>
@@ -247,7 +252,7 @@ function Numbers() {
                 <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>an entire classroom in New Cabell Hall."<br/><br/></motion.div>
                 <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>Balloons are prohibited in John Paul Jones Arena.</motion.div>
             </motion.div>
-                <svg className='connecting-line-container' height='620' width='1000'>
+                <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
                 </svg>
             <div className='footer franklin-gothic-standard'>
