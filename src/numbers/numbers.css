@@ -453,8 +453,15 @@ body {
     }
 }
 
+/* slight correction on the graduate degree section for tablets in portrait mode */
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
+    .graduate-degrees-section {
+        flex-wrap: wrap;
+    }
+}
+
 /* For viewing on mobile devices */
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 700px) {
     .franklin-gothic-medium {
         letter-spacing: .2rem;
     }
