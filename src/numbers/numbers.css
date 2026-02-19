@@ -199,6 +199,7 @@ body {
     }
 
     .graduate-degrees-subsection {
+        max-width: 100vw;
         flex: 1;
     }
 
@@ -318,6 +319,140 @@ body {
     }
 }
 
+
+/* For viewing on tablets in landscape mode and small monitors */
+@media only screen and (max-width: 1400px) {
+    .franklin-gothic-medium {
+        letter-spacing: .2rem;
+    }
+    .header {
+        .header-image {
+            display: grid;
+            height: 100%;
+            scale: 100%;
+            width: 100vw;
+            img {
+                max-width: 100%;
+                max-height: 100vh;
+                margin: auto;
+            }
+        }
+    }
+    .title {
+        margin-left: -14rem;
+        .title-text {
+            font-size: 10rem;
+            letter-spacing: .5rem;
+        }
+
+        .title-text::after {
+            bottom: 2.5rem;
+            left:  0;
+            height: 1rem;
+        }
+        
+        .by-the-numbers {
+            height: fit-content;
+        }
+
+        .year-text {
+            font-size: 12rem;
+        }
+
+        .numbers-text {
+            font-size: 4rem;
+        }
+
+        .by-the-numbers::after {
+            height: .75rem;
+            bottom: .4rem;
+            left: 4rem;
+            width: 54rem;
+        }
+    }
+
+    [class*=-number] {
+        font-size: 8rem;
+        line-height: .8em;
+    }
+
+    [class*=-text] {
+        font-size: 2rem;
+        line-height: 1em;
+        max-width: 90vw;
+    }
+
+    [class*=-image] {
+        scale: 60%
+    }
+    .graduate-degrees-section {
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+
+        .graduate-degrees-subsection {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 100vw;
+            flex: 0;
+        }
+
+        .graduate-degrees-number {
+            font-size: 6rem;
+        }
+
+        .graduate-degrees-text-section {
+            margin-top: -4rem;
+            flex: 1;
+        }
+        .graduate-degrees-text {
+            font-size: 2rem
+        }
+
+        .graduate-degrees-image {
+            scale: 60%;
+            flex: 0
+        }
+    }
+
+    .fast-degrees-section {
+        max-width: 100vw;
+
+        .stopwatch-image {
+            scale: 60%;
+        }
+
+        .fast-degrees-text-section {
+            flex: 1;
+        }
+    }
+
+    .quote-header {
+        font-size: 3rem;
+    }
+    .quote-paragraph {
+        font-size: 1.25rem;
+    }
+
+    .footer {
+        font-size: 8rem;
+        width: 100vw;
+        min-height: fit-content;
+        .wahoowa {
+            margin-bottom: 3rem;
+        }
+        .wahoowa::after {
+            bottom: 1rem;
+            left: .2rem;
+            width: 40rem;
+            height: 1rem;
+        }
+    }
+}
+
 /* For viewing on mobile devices */
 @media only screen and (max-width: 990px) {
     .franklin-gothic-medium {
@@ -364,7 +499,7 @@ body {
         .by-the-numbers::after {
             height: .7rem;
             left: .5rem;
-            width: 80vw;
+            width: 20rem;
         }
     }
     .connecting-line {
@@ -413,7 +548,7 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
+            max-width: 100vw
         }
 
         .graduate-degrees-number {
@@ -433,10 +568,10 @@ body {
         width: 100vw;
         flex-direction: column;
         max-height: fit-content;
-    }
-    .stopwatch-image {
-        scale: 40%;
-        margin: -10rem;
+        .stopwatch-image {
+            scale: 40%;
+            margin: -10rem;
+        }
     }
     .fast-degrees-text {
         text-align: center
@@ -466,7 +601,6 @@ body {
 
     .footer {
         font-size: 3rem;
-        min-height: fit-content;
         margin-top: -4rem;
         .wahoowa {
             margin-bottom: 3rem;
@@ -510,6 +644,7 @@ body {
         .graduate-degrees-subsection {
             flex-direction: row;
             justify-content: space-between;
+            max-width: 100vw;
         }
 
         .graduate-degrees-text-section {
@@ -528,6 +663,7 @@ body {
         }
     }
 }
+
 /* For viewing on 1440p+ monitors */
 @media only screen and (min-width : 2200px) {
     /* Component-Specific Styling */
@@ -692,6 +828,7 @@ body {
     }
 
     .graduate-degrees-subsection {
+        max-width: 100vw;
         flex: 1;
     }
 

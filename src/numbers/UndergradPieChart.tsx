@@ -9,13 +9,15 @@ import { useState } from 'react';
  * taken from https://mui.com/x/react-charts/pie-demo/
  */
 
+/* TODO: Implement more options for styling font size */
+
 const StyledNumber = styled('text')(() => {
     const isSmall = useMediaQuery('(max-width: 990px)');
     return {
         fill: '#e57200',
         textAnchor: 'middle',
         dominantBaseline: 'central',
-        fontSize: isSmall ? '3rem' : '10rem',
+        fontSize: isSmall ? '2rem' : '10rem',
         fontFamily: 'ITC Franklin Gothic Std',
         fontWeight: 500,
     }
@@ -27,7 +29,7 @@ const StyledText = styled('text')(() => {
         fill: '#232d4b',
         textAnchor: 'middle',
         dominantBaseline: 'central',
-        fontSize: isSmall ? '1.5rem' : '2rem',
+        fontSize: isSmall ? '1rem' : '2rem',
         fontFamily: 'ITC Franklin Gothic Std',
         fontWeight: 'lighter'
     }
