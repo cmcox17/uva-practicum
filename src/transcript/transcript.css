@@ -1,7 +1,7 @@
 
 
 .content {
-    max-width: 70%
+    width: 70%
 }
 p {
     text-align: left;
@@ -17,4 +17,10 @@ p {
     margin-inline-start: 1px;
     margin-inline-end: 0px;
     unicode-bidi: isolate;
+}
+
+@media screen and (max-width: 960px) {
+    .content {
+        width: 100%;
+    }
 }

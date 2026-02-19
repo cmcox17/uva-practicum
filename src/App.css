@@ -1,3 +1,6 @@
+
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -20,3 +23,23 @@ body {
   flex-direction: row;
   gap: 10px
 }
+
+@media (min-width: 667px) {
+  .mobile-header {
+    display: none
+  }
+}
+
+@media (max-width: 667px) {
+  .desktop-header {
+    display: none;
+  }
+
+  .page-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
