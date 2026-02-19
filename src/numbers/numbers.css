@@ -321,7 +321,7 @@ body {
 }
 
 /* For viewing on mobile devices */
-@media only screen and (max-width: 990px) and (orientation: portrait) {
+@media only screen and (max-width: 990px) {
     .franklin-gothic-medium {
         letter-spacing: .2rem;
     }
@@ -391,7 +391,6 @@ body {
 
     .degree-chart-container {
         height: 55vh;
-        margin-bottom: 10vh;
     }
     
     .mobile-value {
@@ -479,6 +478,55 @@ body {
             left: .2rem;
             width: 15rem;
             height: .6rem;
+        }
+    }
+}
+
+/* For viewing on phones in landscape mode */
+@media only screen and (max-width: 990px) and (orientation: landscape) {
+    .title {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .by-the-numbers::after {
+            width: 49vw;
+            left: 1rem;
+        }
+    }
+
+    .degree-chart-container {
+        height: 80vh;
+        text {
+            display: none;
+        }
+        margin-bottom: 5rem;
+    }
+
+    .graduate-degrees-section {
+        .graduate-degrees-image {
+            scale: 60%;
+            margin-left: -4rem;
+        }
+        .graduate-degrees-subsection {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .graduate-degrees-text-section {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .fast-degrees-section {
+        flex-direction: row;
+        margin-left: -7rem;
+        gap: 0;
+        
+        .fast-degrees-text-section {
+            flex: 1;
         }
     }
 }

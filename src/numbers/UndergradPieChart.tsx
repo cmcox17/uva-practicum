@@ -53,6 +53,9 @@ const PieCenterLabel = (props: {text: string, value: number}) => {
 
 export const UndergradPieChart = () => {
     // hooks and constants
+    const isSmall = useMediaQuery('(max-width: 990px)');
+    const isLandscape = useMediaQuery('(orientation: landscape)');
+    const mobileLandscape = (isSmall && isLandscape);
     const [highlightedData, setHighlightedData] = useState<{value: number, label: string} | null>(null);
     const undergradData = [
         {label: 'Architecture', value: 117},
@@ -69,11 +72,13 @@ export const UndergradPieChart = () => {
         hideLegend: true
     };
 
+    const colors = (mobileLandscape) ? ['#e57200','#232d4b'] : ['#e57200', '#232d4b', 'white']
+
     return (
         <>
             <PieChart
                 className='degree-chart'
-                colors={['#e57200', '#232d4b', 'white']}
+                colors={colors}
                 slotProps={{ tooltip: {trigger: 'none'}}}
                 onHighlightChange={(highlightedItem) => {
                     if (highlightedItem && highlightedItem.dataIndex !== undefined) {
@@ -81,19 +86,19 @@ export const UndergradPieChart = () => {
                     }
                 }}
                 series={[{
-                    innerRadius: '70%',
+                    innerRadius: (mobileLandscape) ? '0%' : '70%',
                     outerRadius: '90%',
                     data: undergradData,
                     highlightScope: {'fade': 'global', 'highlight': 'item'},
                     faded: { color: 'grey' }
                 }]}
-                sx={{
+                sx={!(mobileLandscape) ? { 
                     [`.${pieArcClasses.root}`]: {
                         cursor: 'pointer',
                         stroke: 'black',
                         strokeWidth: '2px'
                     },
-                }}
+                } : {}}
                 {...settings}
             > 
                 <PieCenterLabel
@@ -101,10 +106,11 @@ export const UndergradPieChart = () => {
                     value={highlightedData?.value ?? 0}
                 />
             </PieChart>
+            {mobileLandscape ? 
             <div className='mobile-content-container'>
                 <motion.div className='mobile-value franklin-gothic-standard'>{highlightedData?.value ? highlightedData.value : ''}</motion.div>
                 <motion.div className='mobile-label franklin-gothic-demi'>{highlightedData?.label ?? 'Baccalaureates by School'}</motion.div>
-            </div>
+            </div> : ''}
         </>
     )
 }

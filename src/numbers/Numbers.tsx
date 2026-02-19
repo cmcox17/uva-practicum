@@ -173,22 +173,28 @@ function Numbers() {
                         <motion.div {...degreeMotionProps} className='graduate-degrees-image'>
                             <img src={phdImage}></img>
                         </motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.4}} className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.3}} className='graduate-degrees-text franklin-gothic-medium'>Ph.Ds</motion.div>
+                        <div className='graduate-degrees-text-section'>
+                            <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.4}} className='graduate-degrees-number franklin-gothic-demi'>436</motion.div>
+                            <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.3}} className='graduate-degrees-text franklin-gothic-medium'>Ph.Ds</motion.div>
+                        </div>
                     </div>
                     <div className='graduate-degrees-subsection'>
                         <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: .8}} className='graduate-degrees-image'>
                             <img src={jdImage}></img>
                         </motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.7}} className='graduate-degrees-number franklin-gothic-demi'>299</motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.6}} className='graduate-degrees-text franklin-gothic-medium'>JDs</motion.div>
+                        <div className='graduate-degrees-text-section'>
+                            <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.7}} className='graduate-degrees-number franklin-gothic-demi'>299</motion.div>
+                            <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.6}} className='graduate-degrees-text franklin-gothic-medium'>JDs</motion.div>
+                        </div>
                     </div>
                     <div className='graduate-degrees-subsection'>
                         <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 1.1}} className='graduate-degrees-image'>
                             <img src={mdImage}></img>
                         </motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.0}} className='graduate-degrees-number franklin-gothic-demi'>144</motion.div>
-                        <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.9}} className='graduate-degrees-text franklin-gothic-medium'>MDs</motion.div>
+                        <div className='graduate-degrees-text-section'>
+                            <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.0}} className='graduate-degrees-number franklin-gothic-demi'>144</motion.div>
+                            <motion.div {...degreeMotionProps} transition={{...degreeMotionProps.transition, delay: 2.9}} className='graduate-degrees-text franklin-gothic-medium'>MDs</motion.div>
+                        </div>
                     </div>
                 </div>
                 <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
@@ -231,26 +237,47 @@ function Numbers() {
             </div>
             <motion.div className='quote-paragraph' initial='initial' whileInView='whileInView' variants={parentTypewriter} viewport={{ once: true }}>
                 <motion.h3 variants={childTypewriterTitle} viewport={{ once: true }} className='quote-header franklin-gothic-demi'>Sustainable Finals, Water Bottles, and Balloons</motion.h3>
-                <motion.p className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>The Office of Major Events partners with UVA Sustainability to reduce waste during Finals Weekend.</motion.p>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>"Reusable water bottles will be allowed through guest security gates as long as the bottles are completely empty,"</motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>said Lela Garner, the student outreach and engagement manager for UVA Sustainability.'</motion.div>
+                {isSmall ? 
+                <motion.p className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>The Office of Major Events partners with UVA Sustainability to reduce waste during Finals Weekend.<br /><br />
+                    "Reusable water bottles will be allowed through guest security gates as long as the bottles are completely empty,"said Lela Garner, the student outreach and engagement manager for UVA Sustainability.
+                </motion.p> :
+                <>
+                    <motion.p className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>The Office of Major Events partners with UVA Sustainability to reduce waste during Finals Weekend.</motion.p>
+                    <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>"Reusable water bottles will be allowed through guest security gates as long as the bottles are completely empty,"</motion.div>
+                    <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>said Lela Garner, the student outreach and engagement manager for UVA Sustainability.</motion.div>
+                </>}
             </motion.div>
             <motion.div {...degreeMotionProps} style={{ margin: '1rem'}} className='water-bottle-number franklin-gothic-demi'>6000</motion.div>
             <motion.h3 {...degreeMotionProps} style={{ margin: '1.2rem'}} className='water-bottle-text franklin-gothic-medium'>16oz Water Bottles Saved</motion.h3>
             <motion.div className='quote-paragraph' initial='initial' whileInView='whileInView' variants={parentTypewriter} viewport={{ once: true }}>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>Guests will notice several blue water towers once they enter the Lawn. "They have the capacity to fill 6,000</motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>16-ounce water bottles and play a helpful role in reducing single-use plastic waste," Garner said.<br/><br/></motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>UVA also encourages graduates to refrain from bringing balloons to Final Exercises. "Although balloons contribute</motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>to the festive atmosphere during celebrations, they can create logistical challenges by obstructing access to</motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>assembly areas, disrupting processions and blocking views for many," Garner said.</motion.div>
+                {isSmall ? 
+                    <motion.p className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>Guests will notice several blue water towers once they enter the Lawn. "They have the capacity to fill 6,000
+                        16-ounce water bottles and play a helpful role in reducing single-use plastic waste," Garner said.<br/><br/> UVA also encourages graduates to refrain from bringing balloons to Final Exercises.
+                        "Although balloons contribute to the festive atmosphere during celebrations, they can create logistical challenges by obstructing access to assembly areas, disrupting processions and blocking views for many," Garner said.
+                    </motion.p> :
+                    <>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>Guests will notice several blue water towers once they enter the Lawn. "They have the capacity to fill 6,000</motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>16-ounce water bottles and play a helpful role in reducing single-use plastic waste," Garner said.<br/><br/></motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>UVA also encourages graduates to refrain from bringing balloons to Final Exercises. "Although balloons contribute</motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>to the festive atmosphere during celebrations, they can create logistical challenges by obstructing access to</motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>assembly areas, disrupting processions and blocking views for many," Garner said.</motion.div>
+                    </>
+                }
             </motion.div>
             <motion.div {...degreeMotionProps} style={{ margin: '1rem'}} className='balloons-number franklin-gothic-demi'>500</motion.div>
             <motion.div {...degreeMotionProps} style={{ margin: '1.2rem'}} className='balloons-text franklin-gothic-medium'>Balloons Diverted to UVA Health Children's</motion.div>
             <motion.div className='quote-paragraph' initial='initial' whileInView='whileInView' variants={parentTypewriter} viewport={{ once: true }}>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>"Our Balloon Brigade volunteers will collect items and deliver them to UVA Health Children's and other community</motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>organizations," she said. "The Balloon Brigade team can divert approximately 500 balloons, equivalent to filling</motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>an entire classroom in New Cabell Hall."<br/><br/></motion.div>
-                <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>Balloons are prohibited in John Paul Jones Arena.</motion.div>
+                {isSmall ? 
+                    <motion.p className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>"Our Balloon Brigade volunteers will collect items and deliver them to UVA Health Children's and other community organizations,"
+                        she said. "The Balloon Brigade team can divert approximately 500 balloons, equivalent to filling an entire classroom in New Cabell Hall."<br/><br/>Balloons are prohibited in John Paul Jones Arena.
+                    </motion.p> :
+                    <>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>"Our Balloon Brigade volunteers will collect items and deliver them to UVA Health Children's and other community</motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>organizations," she said. "The Balloon Brigade team can divert approximately 500 balloons, equivalent to filling</motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>an entire classroom in New Cabell Hall."<br/><br/></motion.div>
+                        <motion.div className='quote-paragraph' variants={childTypewriterBody} viewport={{ once: true }}>Balloons are prohibited in John Paul Jones Arena.</motion.div>
+                    </>
+                }
             </motion.div>
                 <svg className='connecting-line-container' preserveAspectRatio='none' width='100vw' viewBox='0, 0, 130, 50'>
                     <motion.path {...connectingLineMotionProps} className='connecting-line' d={connectorPath} />
