@@ -23,8 +23,9 @@ const StyledNumber = styled('text')(() => {
 
 const StyledText = styled('text')(() => {
     const isSmall = useMediaQuery('(max-width: 990px)');
+    const isDarkMode = useMediaQuery('(prefers-color-scheme: dark')
     return {
-        fill: '#232d4b',
+        fill: isDarkMode ? 'white' : '#232d4b',
         textAnchor: 'middle',
         dominantBaseline: 'central',
         fontSize: isSmall ? '1.5rem' : '2rem',
